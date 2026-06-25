@@ -1,11 +1,11 @@
 'use client'
 
-import { Dependencies } from '@/utils/bg'
+import {Dependent} from '@/utils/Cards'
 import { CopyBlock, dracula } from 'react-code-blocks'
 
-export default function Dependent() {
+export default function Dependents() {
   // Convert array to string
-  const guide = Dependencies.map((item) => item.Depend).join('\n')
+  const guide = Dependent.map((item) => item.code).join('\n')
 
   return (
     <div className=" rounded-2xl w-full" style={{ height: '120px' }}>

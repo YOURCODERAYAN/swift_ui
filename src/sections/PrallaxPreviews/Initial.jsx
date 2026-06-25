@@ -1,9 +1,9 @@
 'use client'
 
-import { Dependencies } from '@/utils/bg'
+import { Dependencies } from '@/utils/bg2'
 import { CopyBlock, dracula } from 'react-code-blocks'
 
-export default function Dependent() {
+export default function  Prelims() {
   // Convert array to string
   const guide = Dependencies.map((item) => item.Depend).join('\n')
 
