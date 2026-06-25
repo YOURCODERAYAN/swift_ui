@@ -1,0 +1,697 @@
+
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+.heading-gradient{
+
+    font-size: clamp(2rem , 6vw + 1rem , 5rem);
+    line-height:0.9;
+    text-align:center;
+    text-transform: uppercase;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:900;    
+
+}
+
+.heading-gradient{
+
+    background-image:
+                linear-gradient(
+
+                to right,
+              #a78bfa,
+    #ec4899,
+    #f43f5e,
+    #f97316,
+    #fbbf24,
+    #a78bfa
+
+                );
+
+        -webkit-background-clip:text;
+        background-clip:text;
+        color:transparent;
+        -webkit-text-fill-color:transparent;
+
+    background-size:300% 300%;
+
+    animation:animate 6s ease infinite;
+
+}
+
+@keyframes animate{
+
+   0%{
+    background-position:10% center;
+    }
+
+    50%{
+        background-position:100% center;
+
+    }
+
+    100%{
+            background-position:0% center;
+    }
+}
+
+/* Custom border effect for buttons */
+
+.box{
+    position:absolute;
+    inset:0;
+}
+
+.box::before,
+.box::after{
+
+    content:'';
+    position:absolute;
+    inset:-7px;
+    background:conic-gradient(
+        from var(--angle),
+        transparent 0deg,
+        transparent 280deg,
+        #8b5cf6,
+        #ec4899,
+        transparent 340deg
+
+    );
+    z-index:1;
+    padding:2px;
+    border-radius:20px;
+    animation: glowing-border 10s linear infinite;
+
+}
+
+.wrapper:hover .box::before,
+.wrapper:hover .box::after{
+
+        animation:glowing-border 4s linear infinite;
+}
+
+.box::before{
+        filter:blur(10px);
+        opacity:0.7;
+}
+
+.wrapper:active{
+
+        transform:scale(0.98);
+}
+
+@property --angle{
+    syntax:'<angle>';
+    initial-value:0deg;
+    inherits:false;
+}
+
+@keyframes glowing-border{
+
+    from{
+            --angle:0deg;
+    }
+
+    to{
+            --angle:360deg;
+
+    }
+}
+
+.design-effect{
+
+    font-size: clamp(2rem , 6vw + 1rem , 5rem);
+    line-height:0.9;
+    text-align:center;
+    text-transform: uppercase;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:900;    
+
+}
+
+.design-effect{
+
+    background-image:
+                linear-gradient(
+
+                to right,
+
+                            #5a5a5a,
+                            #8b8b8b,
+                            #F2F3F5,
+                            #FFFFFF,
+                            #5a5a5a
+
+                );
+
+        -webkit-background-clip:text;
+        background-clip:text;
+        color:transparent;
+        -webkit-text-fill-color:transparent;
+
+    background-size:300% 300%;
+
+    animation:animate 6s ease infinite;
+
+}
+
+@keyframes animate{
+
+   0%{
+    background-position:10% center;
+    }
+
+    50%{
+        background-position:100% center;
+
+    }
+
+    100%{
+            background-position:0% center;
+    }
+}
+
+:root{
+
+        --gradient-color: linear-gradient(180deg , hsl(235 , 4% , 75%) 0% , hsl(235 , 4% , 50%)100%);
+        --dark-color:hsL(235 , 4% , 42%);
+        --white-color:hsl(235 , 16% , 95%);
+        --body-color:hsl(235 , 4% , 60%);
+        --background: oklch(1 0 0);
+        --foreground: oklch(0.145 0 0);
+        --card: oklch(1 0 0);
+        --card-foreground: oklch(0.145 0 0);
+        --popover: oklch(1 0 0);
+        --popover-foreground: oklch(0.145 0 0);
+        --primary: oklch(0.205 0 0);
+        --primary-foreground: oklch(0.985 0 0);
+        --secondary: oklch(0.97 0 0);
+        --secondary-foreground: oklch(0.205 0 0);
+        --muted: oklch(0.97 0 0);
+        --muted-foreground: oklch(0.556 0 0);
+        --accent: oklch(0.97 0 0);
+        --accent-foreground: oklch(0.205 0 0);
+        --destructive: oklch(0.577 0.245 27.325);
+        --border: oklch(0.922 0 0);
+        --input: oklch(0.922 0 0);
+        --ring: oklch(0.708 0 0);
+        --chart-1: oklch(0.87 0 0);
+        --chart-2: oklch(0.556 0 0);
+        --chart-3: oklch(0.439 0 0);
+        --chart-4: oklch(0.371 0 0);
+        --chart-5: oklch(0.269 0 0);
+        --radius: 0.625rem;
+        --sidebar: oklch(0.985 0 0);
+        --sidebar-foreground: oklch(0.145 0 0);
+        --sidebar-primary: oklch(0.205 0 0);
+        --sidebar-primary-foreground: oklch(0.985 0 0);
+        --sidebar-accent: oklch(0.97 0 0);
+        --sidebar-accent-foreground: oklch(0.205 0 0);
+        --sidebar-border: oklch(0.922 0 0);
+        --sidebar-ring: oklch(0.708 0 0);
+}
+
+.button{
+
+        display:flex;
+        align-items:center;
+        column-gap:5rem;
+        background: var(--gradient-color);
+        color: var(--white-color);
+        padding:1rem;
+        border-radius:4rem;
+        font-weight:400;
+        box-shadow: inset 0 -2px 2px var(--dark-color),
+                    inset 0 2px 2px var(--white-color),
+                    0 18px 14px -14px var(--white-color),
+                    -24px 40px 48px hsla(235 , 32% , 4% , .6);
+
+        transition: box-shadow .2s linear;
+}
+
+.diagonal-stripes {
+    background-image:repeating-linear-gradient(
+
+        45deg,
+        #000 ,
+        #000 7px,
+        #1a1a2e 1px,
+        #1a1a2e 8px
+    );
+}
+
+.heading-design{
+
+    font-size: clamp(2rem , 6vw + 1rem , 5rem);
+    line-height:0.9;
+    text-align:center;
+    text-transform: uppercase;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:900;    
+
+}
+
+.heading-design{
+
+    background-image:
+                linear-gradient(
+
+                to right,
+
+                           #0d9488,
+                            #0891b2,
+                           #0ea5e9,
+                           #93c5fd,
+                           #c7d2fe
+
+                );
+
+        -webkit-background-clip:text;
+        background-clip:text;
+        color:transparent;
+        -webkit-text-fill-color:transparent;
+
+    background-size:300% 300%;
+
+    animation:animate 6s ease infinite;
+
+}
+
+@keyframes animate{
+
+   0%{
+    background-position:10% center;
+    }
+
+    50%{
+        background-position:100% center;
+
+    }
+
+    100%{
+            background-position:0% center;
+    }
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Keep the black box as a scrollable panel while the page also scrolls */
+.bg-black {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for cleaner look (optional) */
+.bg-black::-webkit-scrollbar {
+    width: 8px;
+}
+
+.bg-black::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 4px;
+}
+
+.bg-black::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+.bg-black::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* Container inside the box */
+.cards-animated .container {
+    width: 100%;
+    min-height: 100%; /* Takes minimum full height of box */
+    position: relative;
+}
+
+/* Sections stack vertically inside the box */
+.cards-animated section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    overflow: visible;
+}
+
+.cards-animated .main {
+    min-height: 140vh;
+    position: relative;
+    overflow: visible;
+}
+
+/* For multiple sections, they'll stack */
+.cards-animated section:not(:last-child) {
+    margin-bottom: 0; /* No gaps between sections */
+}
+
+/* Cards positioned relative to each section */
+.cards-animated .card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(240px, 40vw);
+    height: min(360px, 60vh);
+    perspective: 1000px;
+    z-index: 2;
+}
+
+.cards-animated .card-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    animation: floating 3s infinite ease-in-out;
+}
+
+/* Floating animation - stays within bounds */
+@keyframes floating {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        transform: translate(-50%, -55%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Rest of your card styles remain the same */
+.cards-animated img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cards-animated h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    font-weight: lighter;
+    line-height: 100%;
+    margin: 0;
+    z-index: 1;
+}
+
+.cards-animated .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+}
+
+.cards-animated .flip-card-front,
+.cards-animated .flip-card-back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    border-radius: 0.8rem;
+    overflow: hidden;
+}
+
+.cards-animated .flip-card-front {
+    z-index: 1;
+}
+
+.cards-animated .flip-card-back {
+    padding: 1rem;
+    background: linear-gradient(135deg, #ffffff, #f3f4f6);
+    color: #111827;
+    transform: rotateY(180deg);
+    z-index: 2;
+}
+
+.cards-animated .flip-card-back p {
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Card delays */
+.cards-animated #card-1 .card-wrapper {
+    animation-delay: 0s;
+}
+.cards-animated #card-2 .card-wrapper {
+    animation-delay: 0.2s;
+}
+.cards-animated #card-3 .card-wrapper {
+    animation-delay: 0.4s;
+}
+.cards-animated #card-4 .card-wrapper {
+    animation-delay: 0.6s;
+}
+
+
+
+
+
+@theme inline {
+
+    --font-heading: var(--font-sans);
+
+    --font-sans: var(--font-sans);
+
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    --color-sidebar-border: var(--sidebar-border);
+
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+
+    --color-sidebar-accent: var(--sidebar-accent);
+
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+
+    --color-sidebar-primary: var(--sidebar-primary);
+
+    --color-sidebar-foreground: var(--sidebar-foreground);
+
+    --color-sidebar: var(--sidebar);
+
+    --color-chart-5: var(--chart-5);
+
+    --color-chart-4: var(--chart-4);
+
+    --color-chart-3: var(--chart-3);
+
+    --color-chart-2: var(--chart-2);
+
+    --color-chart-1: var(--chart-1);
+
+    --color-ring: var(--ring);
+
+    --color-input: var(--input);
+
+    --color-border: var(--border);
+
+    --color-destructive: var(--destructive);
+
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-accent: var(--accent);
+
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-muted: var(--muted);
+
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-secondary: var(--secondary);
+
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-primary: var(--primary);
+
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-popover: var(--popover);
+
+    --color-card-foreground: var(--card-foreground);
+
+    --color-card: var(--card);
+
+    --color-foreground: var(--foreground);
+
+    --color-background: var(--background);
+
+    --radius-sm: calc(var(--radius) * 0.6);
+
+    --radius-md: calc(var(--radius) * 0.8);
+
+    --radius-lg: var(--radius);
+
+    --radius-xl: calc(var(--radius) * 1.4);
+
+    --radius-2xl: calc(var(--radius) * 1.8);
+
+    --radius-3xl: calc(var(--radius) * 2.2);
+
+    --radius-4xl: calc(var(--radius) * 2.6);    
+
+}
+
+.dark {
+
+    --background: oklch(0.145 0 0);
+
+    --foreground: oklch(0.985 0 0);
+
+    --card: oklch(0.205 0 0);
+
+    --card-foreground: oklch(0.985 0 0);
+
+    --popover: oklch(0.205 0 0);
+
+    --popover-foreground: oklch(0.985 0 0);
+
+    --primary: oklch(0.922 0 0);
+
+    --primary-foreground: oklch(0.205 0 0);
+
+    --secondary: oklch(0.269 0 0);
+
+    --secondary-foreground: oklch(0.985 0 0);
+
+    --muted: oklch(0.269 0 0);
+
+    --muted-foreground: oklch(0.708 0 0);
+
+    --accent: oklch(0.269 0 0);
+
+    --accent-foreground: oklch(0.985 0 0);
+
+    --destructive: oklch(0.704 0.191 22.216);
+
+    --border: oklch(1 0 0 / 10%);
+
+    --input: oklch(1 0 0 / 15%);
+
+    --ring: oklch(0.556 0 0);
+
+    --chart-1: oklch(0.87 0 0);
+
+    --chart-2: oklch(0.556 0 0);
+
+    --chart-3: oklch(0.439 0 0);
+
+    --chart-4: oklch(0.371 0 0);
+
+    --chart-5: oklch(0.269 0 0);
+
+    --sidebar: oklch(0.205 0 0);
+
+    --sidebar-foreground: oklch(0.985 0 0);
+
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+
+    --sidebar-accent: oklch(0.269 0 0);
+
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+
+    --sidebar-border: oklch(1 0 0 / 10%);
+
+    --sidebar-ring: oklch(0.556 0 0);    
+
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;    
+
+    }
+  body {
+    @apply bg-background text-foreground;    
+
+    }
+  html {
+    @apply font-sans;    
+
+    }    
+
+}
+
+
+@theme inline {
+  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
+
+
+
+
+.guide-scroll{
+
+    scrollbar-width:thin;
+    scrollbar-color: #52525b transparent;
+
+
+}
+
+
+.guide-scroll::-webkit-scrollbar {
+
+        width:8px;
+}
+
+
+.guide-scroll::-webkit-scrollbar-track {
+        background:transparent;
+}
+
+.guide-scroll::-webkit-scrollbar-thumb{
+        background-color:#52525b ;
+        border-radius:9999px;
+}
+
+
+.guide-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #71717a;
+}
+
+.guide-scroll::-webkit-scrollbar-button {
+  display: none;
+}
