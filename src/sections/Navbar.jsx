@@ -1,36 +1,34 @@
 'use client'
-
+import {LayoutTextFlip} from '@/sections/fliptext'
+import { FaGithub } from "react-icons/fa";
 export default function Navbar(){
 
         return(
-            <header className="fixed bg-zinc-900 w-full h-18 z-10 ">
+            <header className="fixed bg-zinc-900 w-full h-18 z-90 ">
 
-                    <div className=" flex items-center justify-between p-3 ">
-                        <div className="text-2xl text-zinc-300 font-bold ml-5 mr-5">
-                                Craft UI
+                    <div className=" flex items-center justify-between flex-row p-3 ">
+                        <div className="  font-bold ml-5 mr-5  " style={{width:'20%'}}>
+                             <LayoutTextFlip />
                         </div>
 
 
-                        <div className="text-zinc-300  font-semibold ml-35">
-                                A component library built for  upcoming developers
+                        <div className="text-bold mr-55 flex items-center justify-center w-full text-2xl text-amber-700 font-serif">
+                            UI library
                         </div>
 
 
                         <div className=" flex items-center gap-5 mr-3">
-                        <input 
-                     type="text"
-                     placeholder="Search"  
-                     
-                     className="border-[0.5px] border-white rounded-lg p-1 w-30 text-sm"
+                      
+                 
+                        <a href="https://github.com/YOURCODERAYAN/swift_ui" target="_blank"
+            rel="noopener noreferrer">
+                    <div className=" p-2 flex items-center gap-2 rounded-2xl text-sm text-white hover:text-black hover:bg-white ease-in-out cursor-pointer">
                         
-                        />
-                    <div className="p-2 rounded-2xl text-sm text-white hover:text-black hover:bg-white ease-in-out cursor-pointer ">
-                        Log in
+                     <FaGithub size={20} />   GitHub
+                      
+
                     </div>
-                    
-                    <div className=" p-2 rounded-2xl text-sm text-white hover:text-black hover:bg-white ease-in-out cursor-pointer">
-                        GitHub
-                    </div>
+                    </a>
 
                         </div>
                     </div>
