@@ -7,7 +7,7 @@ export default function Navbar(){
             <header className="fixed bg-zinc-900 w-full h-18 z-90 ">
 
                     <div className=" flex items-center justify-between flex-row p-3 ">
-                        <div className="  font-bold ml-5 mr-5  " style={{width:'20%'}}>
+                        <div className="  font-bold ml-5 mr-5 " style={{width:'20%' }}>
                              <LayoutTextFlip />
                         </div>
 

@@ -44,7 +44,7 @@ export default function MobileGate({children}){
 
                 <div className="fixed inset-0 flex  flex-col items-center justify-center bg-black text-white font-semibold text-xl  p-3 h-screen font-serif" style={{'zIndex': 9999}}>
                      <span className="mb-5">  <ImWarning size={40} /></span>      
-                    <p>For Best Experience please switch to desktop</p>
+                    <p>"This experience requires a desktop,<br/> Please switch to desktop to continue"</p>
                 </div>
 
             )

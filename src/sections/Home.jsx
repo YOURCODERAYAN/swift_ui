@@ -179,7 +179,7 @@ useGSAP(()=>{
   {/* Description */}
   <p className="text-base  text-center mt-3 leading-relaxed">
     Production-ready components built with React, TypeScript, Tailwind CSS, 
-    and Motion libraries.
+    and Motion  & Gsap libraries.
   </p>
 </div>
 
@@ -232,7 +232,7 @@ useGSAP(()=>{
     <div className="relative h-90  w-full flex items-center overflow-hidden pl-10">
         <div 
           className="text-white font-semibold " 
-          style={{fontSize: '200px'}}
+          style={{fontSize: '180px'}}
           ref={animateRef}
         >
           <h1 className="font-bold text-white/20 leading-tight">
@@ -277,7 +277,7 @@ useGSAP(()=>{
       </div>
 
       {/* THIRD ANIMATED TEXT SECTION */}
-      <div className="relative h-80 w-full  flex items-center justify-end overflow-hidden pr-10">
+      <div className="relative h-96 w-full  flex items-center justify-end overflow-hidden pr-2">
         <div 
           className="text-white font-semibold" 
           style={{fontSize: '180px'}}
@@ -294,13 +294,10 @@ useGSAP(()=>{
             <span className="inline-block opacity-1 text-amber-600 translate-y-20">n</span>
             <span className="inline-block opacity-1 text-amber-600  translate-y-20">e</span>
             <span className="inline-block opacity-1 text-amber-600  translate-y-20">d</span>
-            <span className="inline-block opacity-1 translate-y-20"></span>
             <span className="inline-block opacity-1 translate-y-20">T</span>
             <span className="inline-block opacity-1 translate-y-20">o</span>
-            <span className="inline-block opacity-1 translate-y-20"> </span>
             <span className="inline-block opacity-1 translate-y-20">B</span>
             <span className="inline-block opacity-1 translate-y-20">e</span>
-            <span className="inline-block opacity-1 translate-y-20"></span>
             <span className="inline-block opacity-1  translate-y-20">F</span>
             <span className="inline-block opacity-1  translate-y-20">e</span>
             <span className="inline-block opacity-1  translate-y-20">e</span>

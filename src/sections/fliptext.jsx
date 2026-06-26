@@ -5,7 +5,7 @@ import { cn } from "@/utils/main";
 
 export const LayoutTextFlip = ({
   text = "Swift",
-  words = ["UI", "HandCrafted", "Beginner", "Fresh"],
+  words = ["UI", "Animated", "Beginner", "Fresh"],
   duration = 3000
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -27,7 +27,7 @@ export const LayoutTextFlip = ({
       </motion.span>
       <motion.span
         layout
-        className="relative w-fit overflow-hidden rounded-md border border-transparent bg-zinc-300 px-4 py-2 font-sans text-2xl font-bold tracking-tight text-zinc-500 shadow-sm ring shadow-black/10 ring-black/10 drop-shadow-lg md:text-1xl dark:bg-neutral-900 dark:text-white dark:shadow-sm dark:ring-1 dark:shadow-white/10 dark:ring-white/10">
+        className="relative w-fit  overflow-hidden rounded-md border border-transparent bg-zinc-300 px-4 py-2 font-sans text-2xl font-bold tracking-tight text-zinc-500 shadow-sm ring shadow-black/10 ring-black/10 drop-shadow-lg md:text-1xl dark:bg-neutral-900 dark:text-white dark:shadow-sm dark:ring-1 dark:shadow-white/10 dark:ring-white/10">
         <AnimatePresence mode="popLayout">
           <motion.span
             key={currentIndex}
