@@ -8,7 +8,7 @@
      paragraph of description.
      Suggested path: public/readme/hero.gif
      Suggested size: ~1200px wide, under 5MB (GitHub renders large GIFs slowly) -->
-<img width="1859" height="916" alt="Final_Project" src="https://github.com/user-attachments/assets/95c809c4-47f8-46fb-b838-5262c7425c27" />
+<img width="1859" height="916" alt="Final_Project" src="https://github.com/user-attachments/assets/de8c3c91-0449-4bfc-87cc-12b6bf3f7ad8" />
 
 
 An animation-forward, copy-paste React component library — built shadcn-style: no package install for the components themselves, just copy the source into your project and own it from there.
@@ -16,6 +16,8 @@ An animation-forward, copy-paste React component library — built shadcn-style:
 Dark, cinematic, space-themed by default. Built for portfolios, landing pages, and product UIs that want real motion, not just hover transitions.
 
 🚧 **Actively growing.** Launched with 6 components across backgrounds, buttons, and cards — more are being added as they're built. This isn't a fixed set; check the live docs for whatever's newest.
+
+🖥️ **Built for large screens.** Swift UI is designed specifically for laptop and desktop viewports — it isn't built or tested for tablet or mobile. The live docs site enforces this with a `MobileGate`, and most components assume a desktop-sized canvas (3D scenes, scroll-pinned animations) that won't translate well to a phone screen.
 
 </div>
 
@@ -40,6 +42,8 @@ More categories (forms, navigation, text effects) are planned as the library gro
 ## 📦 Install
 
 Swift UI isn't an npm package — copy the component source directly into your project. Each component depends on different libraries (Framer Motion, GSAP, React Three Fiber, etc.) depending on what it does, so **dependencies aren't listed here** — open the component's own guide for its exact install command and file destinations before copying.
+
+⚠️ **No responsive/mobile support.** None of these components were built with small-viewport layouts in mind — 3D scenes, scroll-pinned sequences, and cursor-tracked effects are all desktop-first by design, not just under-tested on mobile. If you copy a component into a project that needs to work on phones or tablets, expect to add your own breakpoint handling (or your own version of the library's `MobileGate` pattern: detect viewport width and show a fallback below ~1024px).
 
 ---
 
