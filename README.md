@@ -1,89 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
 
-## Getting Started
+# Swift UI
 
-First, run the development server:
+<!-- 🖼️ HERO BANNER — replace with a screen recording (GIF/MP4→GIF) of Aurora or a 
+     quick montage of 2-3 components in motion. This is the single highest-impact 
+     image slot on the whole README; a moving visual here does more than any 
+     paragraph of description.
+     Suggested path: public/readme/hero.gif
+     Suggested size: ~1200px wide, under 5MB (GitHub renders large GIFs slowly) -->
+<img width="1859" height="916" alt="Final_Project" src="https://github.com/user-attachments/assets/95c809c4-47f8-46fb-b838-5262c7425c27" />
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+An animation-forward, copy-paste React component library — built shadcn-style: no package install for the components themselves, just copy the source into your project and own it from there.
+
+Dark, cinematic, space-themed by default. Built for portfolios, landing pages, and product UIs that want real motion, not just hover transitions.
+
+🚧 **Actively growing.** Launched with 6 components across backgrounds, buttons, and cards — more are being added as they're built. This isn't a fixed set; check the live docs for whatever's newest.
+
+</div>
+
+---
+
+## ✨ What's inside (so far)
+
+<div align="center">
+
+| Category | Components |
+|---|---|
+| **Backgrounds** | `Aurora` — animated gradient + starfield + orbiting 3D planet<br>`Parallax` — scroll-driven multi-layer depth background |
+| **Buttons** | `MagneticButton` — cursor-tracked shadow depth<br>`GlowButton` — cursor-tracked radial glow |
+| **Cards** | `AnimateCards` — scroll-pinned spread/rotate/flip sequence<br>`StackedCards` — cursor-reactive spring-physics card stack |
+
+</div>
+
+More categories (forms, navigation, text effects) are planned as the library grows. Each component has its own guide — full dependency list, install steps, configurable props, and known constraints — in the live docs at `/component/[slug]`.
+
+---
+
+## 📦 Install
+
+Swift UI isn't an npm package — copy the component source directly into your project. Each component depends on different libraries (Framer Motion, GSAP, React Three Fiber, etc.) depending on what it does, so **dependencies aren't listed here** — open the component's own guide for its exact install command and file destinations before copying.
+
+---
+
+## 🚀 Quick start
+
+```jsx
+import Together from '@/sections/Aurorabg/Together'
+import MagneticButton from '@/components/Buttons'
+
+export default function Page() {
+  return (
+    <Together>
+      <h1 className="text-5xl font-bold text-white">Your hero content</h1>
+      <MagneticButton>Get Started</MagneticButton>
+    </Together>
+  )
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Every component is self-contained — copy the file, fix the one or two import paths flagged in its guide, and it works without pulling in the rest of the library.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📁 Project structure
 
 ```
 swift_ui
-├─ eslint.config.mjs
-├─ jsconfig.json
-├─ next.config.mjs
-├─ package-lock.json
-├─ package.json
-├─ postcss.config.mjs
-├─ public
-│  ├─ file.svg
-│  ├─ globe.svg
-│  ├─ next.svg
-│  ├─ space_boi.glb
-│  ├─ vercel.svg
-│  └─ window.svg
-├─ README.md
-└─ src
-   ├─ app
-   │  ├─ component
-   │  │  └─ [slug]
-   │  │     └─ page.js
-   │  ├─ favicon.ico
-   │  ├─ globals.css
-   │  ├─ layout.js
-   │  └─ page.js
-   ├─ components
-   │  ├─ Aurorabg.jsx
-   │  └─ Buttons.jsx
-   ├─ constants
-   │  └─ CardInfo.js
-   ├─ sections
-   │  ├─ Aurorabg
-   │  │  ├─ Aurora.jsx
-   │  │  ├─ Cards.jsx
-   │  │  ├─ spaceboi.jsx
-   │  │  ├─ spacescene.jsx
-   │  │  └─ Together.jsx
-   │  ├─ Home.jsx
-   │  ├─ Installation.jsx
-   │  ├─ Navbar.jsx
-   │  ├─ Previews
-   │  │  ├─ AuroraPreview.jsx
-   │  │  ├─ Install.jsx
-   │  │  └─ Usage.jsx
-   │  ├─ sidebar.jsx
-   │  └─ tracing.jsx
-   └─ utils
-      ├─ bg.js
-      ├─ info.js
-      └─ main.js
-
+├─ public/                  → images, GLB models, icons used by previews
+├─ src
+│  ├─ app
+│  │  ├─ component/[slug]   → live docs route, one page per component
+│  │  └─ page.js            → homepage
+│  ├─ components/           → top-level component entry points (Backgrounds, Buttons, Cards, Menu, MobileGate)
+│  ├─ GuideRenderer.jsx      → renders each component's .md.js guide as styled docs
+│  ├─ Markdown/guides/       → one *.md.js file per component, source of the docs site
+│  ├─ sections/              → actual component implementations, grouped by feature
+│  │  ├─ Aurorabg/           → Aurora background + SpaceBoi 3D model
+│  │  ├─ Parallax/           → Parallax background
+│  │  ├─ CardsGsap/          → AnimateCards + Cardmain
+│  │  ├─ ElasticCards/       → StackedCards (physics stack)
+│  │  ├─ HoverButton/        → MagneticButton implementation
+│  │  └─ */Previews/         → live preview + step-by-step code shown in the docs UI
+│  ├─ constants/             → static data (card info, etc.)
+│  └─ utils/                 → shared helpers (bg, button, card configs)
+└─ README.md
 ```
+
+⚠️ Folder names under `sections/` (e.g. `HoverButton`, `ElasticCards`) are internal naming and don't always match the component's exported name — check each component's own guide for its actual import path and export name rather than assuming from the folder.
+
+---
+
+## 🧱 Philosophy
+
+- **Copy, don't install.** You own the code the moment you paste it — no black-box dependency, no version lock-in on the components themselves.
+- **One mechanism per component.** Each piece does one specific kind of motion well (cursor-tracked shadow, scroll-pinned flip, spring-physics push) rather than being a generic do-everything animation kit.
+- **Dark and atmospheric by default**, built around a cyan/violet space palette — but every component accepts enough props to restyle for a different visual direction.
+
+---
+
+## 🛣️ Status
+
+Early and growing — 6 components today, more on the way. Each one gets refined individually as real use surfaces edge cases, so check a component's own guide for its current state rather than assuming this README is fully caught up.
+
+---
+
+## 📄 License
+
+MIT — copy, modify, ship. No attribution required, though it's always appreciated.
