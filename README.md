@@ -99,7 +99,7 @@ swift_ui
 
 - **Copy, don't install.** You own the code the moment you paste it — no black-box dependency, no version lock-in on the components themselves.
 - **One mechanism per component.** Each piece does one specific kind of motion well (cursor-tracked shadow, scroll-pinned flip, spring-physics push) rather than being a generic do-everything animation kit.
-- **Dark and atmospheric by default**, built around a cyan/violet space palette — but every component accepts enough props to restyle for a different visual direction.
+- **Dark and atmospheric by default**, built around a dark zinc space palette — but every component accepts enough props to restyle for a different visual direction.
 
 ---
 
